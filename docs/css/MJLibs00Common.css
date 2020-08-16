@@ -1,0 +1,202 @@
+/*==============================================================================
+  ■MJLibsトップページ用css
+================================================================================*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■初期設定
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+body {
+  font-size : 14px;
+  font-family:"メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+  margin : 0; padding : 0;
+  background-color : rgba(240,240,240,1);
+  color : rgba(80,80,80,1);
+}
+header, footer, article, section, aside, nav, main {
+  box-sizing : border-box;
+}
+div {
+  position : relative;
+}
+a, a:link, :visited {
+  color : rgba(220,20,0,1);
+  text-decoration : none;
+}
+img, span, a, input {
+  display : inline-block;
+  vertical-align : middle;
+}
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■色
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.JMRed {
+  background-color : rgba(255,120,90,1);
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■ボタン
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.BTN {
+  padding : 4px 8px;
+  background-color : rgba(210,210,210,1);
+  border : solid 1px rgba(180,180,180,1);
+}
+.BTN:hover {
+  cursor : pointer;
+  background-color : rgba(245,252,255,1);
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■構造
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+article {
+  width : 90%;
+/*  background-color : rgba(180,180,180,1);*/
+  padding : 0;
+  margin : 8px auto;
+}
+header {
+  width : 100%;
+  padding : 10px;
+  background-color : rgba(255,250,252,1);
+}
+section {
+  width : 100%;
+  display : flex;
+}
+main {
+  flex : 1 1 auto;
+  background-color : rgba(120,225,240,1);
+}
+aside {
+  flex : 0 0 200px;
+  background-color : rgba(120,255,240,1);
+}
+.RightBox {
+  width : 90%;
+  display : flex;
+/*  justify-content : flex-end;*/
+}
+.RightBox > div {
+  flex : 0 0 auto;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■ライブラリ：ローディングアニメーション
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+canvas {
+  border-radius : 8px 8px 8px 8px;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■ライブラリ：マウスオーバードキュメント
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+[data-helpid] {
+  width : 24px;
+  border :solid 1px rgba(65,65,65,1);
+  border-radius : 2px 2px 2px 2px;
+  text-align : center;
+}
+[data-helpid]:hover {
+  cursor : help;
+}
+[data-helpdoc] {
+  padding : 8px 20px;
+  background-color : white;
+  box-shadow : 0 0 2px 1px rgba(0,0,0,0.5);
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■ライブラリ：カレンダー
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.popupWindow {
+/*  width : 100vw; height : 100vh;
+  background-color : rgba(0,0,0,0.5);*/
+  position : fixed;
+  z-index : 9910;
+  top : 0;
+  left : 0;
+  margin : 0 !important; padding : 0 !important;
+}
+.popupMain {
+  width : 50%; height : 60%;
+  min-width : 580px; min-height : 520px;
+  background-color : white;
+  margin : 10vh auto;
+  display : block !important;
+}
+.popupHeader {
+  width : 100%; height : 60px;
+  background-color : rgba(190,219,245,0.6);
+  border-bottom : solid 1px rgba(180,180,180,1);
+  display : flex;
+  justify-content : center;
+  font-weight : bold;
+  font-size : 1.2em;
+}
+.popupHeader .ChoiceYearMonth {
+  display : flex;
+  padding : 20px 0 10px 0;
+}
+.popupHeader .ChoiceButton {
+  width : 32px;
+  padding : 2px 4px;
+  margin-left : 4px;
+  border : none;
+  box-sizing : border-box;
+  text-align : center;
+  color : rgba(20,120,235,1);
+}
+.popupHeader .ChoiceButton:hover {
+  cursor : pointer;
+  color : white;
+  background-color : rgba(20,120,235,1);
+  border-radius : 3px 3px 3px 3px;
+}
+.ChoiceNumber {
+  padding : 2px;
+  text-align : center;
+}
+.popupWindow .MultiLayout {
+  display : flex;
+}
+.popupWindow .CalenderBox {
+  position : relative;
+  width : 80%;
+  margin : 16px auto 8px auto;
+/*  background-color : rgba(239,239,235,1); height : 80%;*/
+}
+.popupWindow .CalenderBox .CalenderRow {
+  display : flex;
+  justify-content : stretch;
+}
+.popupWindow .CalenderBox .CalenderRow .CalenderCell {
+  flex : 1 0 14%;
+  text-align : center;
+  border-bottom : solid 1px rgba(180,180,180,1);
+  border-right : solid 1px rgba(180,180,180,1);
+}
+.popupWindow .CalenderBox .CalenderRow .CalenderCell:first-child {
+  border-left : solid 1px rgba(180,180,180,1);
+}
+.popupWindow .CalenderBox .CalenderRow.Column .CalenderCell {
+  background-color : rgba(240,249,255,1);
+  border-top : solid 1px rgba(180,180,180,1);
+}
+.popupWindow .CalenderBox .CalenderRow.Column .CalenderCell span {
+  margin-top : 8px;
+}
+.popupWindow .CalenderBox .CalenderRow.Column .CalenderCell {
+  height : 32px;
+}
+.popupWindow .CalenderBox .CalenderRow .CalenderCell.Sunday { color : rgba(255,90,182,1); }
+.popupWindow .CalenderBox .CalenderRow .CalenderCell.Saturday { color : rgba(92,179,255,1); }
+
+.popupWindow .CalenderBox .CalenderRow.Element .CalenderCell {
+  min-height : 52px;
+  background-color : rgba(240,240,232,1);
+}
+.popupWindow .CalenderBox .CalenderRow.Element .CalenderCell.Day {
+  background-color : white;
+}
+.popupWindow .CalenderBox .CalenderRow.Element .CalenderCell.Day.Sunday { background-color : rgba(255,242,248,1); }
+.popupWindow .CalenderBox .CalenderRow.Element .CalenderCell.Day.Saturday { background-color : rgba(239,249,255,1); }
+.popupWindow .CalenderBox .CalenderRow.Element .CalenderCell.Day:hover {
+  cursor : pointer;
+  background-color : rgba(126,225,255,1);
+}
