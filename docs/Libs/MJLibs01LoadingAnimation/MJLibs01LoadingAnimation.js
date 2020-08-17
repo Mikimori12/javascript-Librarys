@@ -49,12 +49,10 @@ var MJLibs01LoadingAnimation = (function() {
     //表示
     document.querySelector('[data-library="'+_LoadingName+'"]').style.display = "";
     _LoadingID = window.setInterval(_Loading[ _LoadingMethod ], _LoadingTiming);
-    console.log('start',_LoadingID)
   };
 
   //▼停止
   PT.Stop = function() {
-    console.log('stop',_LoadingID, _LoadingCount)
     document.querySelector('[data-library="'+_LoadingName+'"]').style.display = "none";
     window.clearInterval(_LoadingID);
   };
