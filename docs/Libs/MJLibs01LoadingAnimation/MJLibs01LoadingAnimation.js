@@ -14,10 +14,10 @@ var MJLibs01LoadingAnimation = (function() {
     //設定：共通
     _LoadingZ = param.Z || "9999";//z-index値
     _LoadingWid = param.Wid || 100;//canvasの縦横サイズ
-    _LoadingTiming = param.Timing || 120;//ローディングタイミング
+    _LoadingTiming = param.Timing || 100;//ローディングタイミング
     _LoadingMethod = param.Method || "CirclingBall";//再生するローディングアニメーションを指定
     _LoadingName = param.Name || "LoadingAnimationLibrary";//canvasName
-    _LoadingBack = param.Back || "rgba(0,0,0,0.2)";//ローディングアニメーションの背景色
+    _LoadingBack = param.Back || "rgba(0,0,0,0.1)";//ローディングアニメーションの背景色
     _LoadingRGB = param.RGB || { R:0,G:120,B:255 };//ローディングアニメーションの色
     //設定：CirclingBall
     _LoadingBall = param.R || 6;//ボール半径
@@ -40,16 +40,21 @@ var MJLibs01LoadingAnimation = (function() {
   //■アニメーション制御
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //▼再生
-  PT.Start = function() {
+  PT.Start = function(param) {
     //ローディングIDを削除しておく
-    window.clearInterval(_LoadingID);
+    _Loading.Stop();
+    //再生するアニメ
+    _LoadingMethod = param == null ? _LoadingMethod : param;
+    //window.clearInterval(_LoadingID);
     //表示
     document.querySelector('[data-library="'+_LoadingName+'"]').style.display = "";
     _LoadingID = window.setInterval(_Loading[ _LoadingMethod ], _LoadingTiming);
+    console.log('start',_LoadingID)
   };
 
   //▼停止
   PT.Stop = function() {
+    console.log('stop',_LoadingID, _LoadingCount)
     document.querySelector('[data-library="'+_LoadingName+'"]').style.display = "none";
     window.clearInterval(_LoadingID);
   };
@@ -61,6 +66,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.clearRect(0,0,_LoadingWid,_LoadingWid);
     for( var i=1;i<=8;i++ ) {
       var xy = _Loading.BallsPlace(i);
+      _LoadingCtx.globalCompositeOperation = 'source-over';
       _LoadingCtx.beginPath();
       _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
       _LoadingCtx.globalAlpha = 1+(1-i)*0.1;
@@ -103,6 +109,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'source-over';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R1,(Math.PI/6)*soto.Fr,(Math.PI/6)*soto.To,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -110,6 +117,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'destination-out';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R2,0,(Math.PI/6)*12,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -118,6 +126,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'source-over';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",0.5)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R3,(Math.PI/6)*uchi.Fr,(Math.PI/6)*uchi.To,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -125,6 +134,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'destination-out';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R4,0,(Math.PI/6)*12,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -158,6 +168,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'source-over';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R1,(Math.PI/6)*soto.Fr,(Math.PI/6)*soto.To,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -173,6 +184,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'source-over';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",0.5)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R3,(Math.PI/6)*uchi.Fr,(Math.PI/6)*uchi.To,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -180,6 +192,7 @@ var MJLibs01LoadingAnimation = (function() {
     _LoadingCtx.globalCompositeOperation = 'destination-out';
     _LoadingCtx.beginPath();
     _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+",1)";
+    _LoadingCtx.globalAlpha = 1;
     _LoadingCtx.arc(xy.XY,xy.XY,xy.R4,0,(Math.PI/6)*12,true);
     _LoadingCtx.lineTo(xy.XY,xy.XY);
     _LoadingCtx.closePath();
@@ -206,6 +219,7 @@ var MJLibs01LoadingAnimation = (function() {
     for( var i=countFrom;i<countTo;i++) {
       var xy = _Loading.GetXY(i*30);
       var opa = 0.1+ Math.round((num*1/12)*10)/10;
+      _LoadingCtx.globalCompositeOperation = 'source-over';
       _LoadingCtx.beginPath();
       _LoadingCtx.fillStyle = "rgba("+_LoadingRGB.R+","+_LoadingRGB.G+","+_LoadingRGB.B+","+opa+")";
       _LoadingCtx.globalAlpha = opa;
