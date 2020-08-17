@@ -47,7 +47,7 @@ img, span, a, input {
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■構造
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
-.ArticlePageBox {
+.ArticlePage {
   width : 100%; height : 100%;
 }
 .ArticlePageHeader {
@@ -64,14 +64,16 @@ img, span, a, input {
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .MainBox {
   width : 100%;
+  padding : 10px;
 }
 .RowBox {
-  width : 100%;
+  width : 90%;
   display : flex;
 }
 .MainBox .RowBox .CellBox {
   border-bottom : solid 1px rgba(140,140,140,1);
   border-right : solid 1px rgba(140,140,140,1);
+  padding : 4px;
 }
 .MainBox .RowBox:first-child .CellBox {
   border-top : solid 1px rgba(140,140,140,1);
