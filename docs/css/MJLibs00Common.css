@@ -9,7 +9,7 @@ body {
   font-family:"メイリオ", "ＭＳ Ｐゴシック", sans-serif;
   margin : 0; padding : 0;
   background-color : rgba(240,240,240,1);
-  color : rgba(80,80,80,1);
+  color : rgba(60,60,60,1);
 }
 header, footer, article, section, aside, nav, main, div {
   box-sizing : border-box;
@@ -25,7 +25,7 @@ img, span, a, input {
   display : inline-block;
   vertical-align : middle;
 }
-
+h1,h2,h3,h4 { padding:0; margin:0; }
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■色
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -39,21 +39,26 @@ img, span, a, input {
   padding : 4px 8px;
   background-color : rgba(210,210,210,1);
   border : solid 1px rgba(180,180,180,1);
+  text-align : center;
 }
 .BTN:hover {
   cursor : pointer;
   background-color : rgba(245,252,255,1);
+  color : rgba(60,190,240,1);
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■構造
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .ArticlePage {
   width : 100%; height : 100%;
+  padding : 0;
 }
 .ArticlePageHeader {
   width : 100%; height : 40px;
-  background-color : rgba(120,140,175,1);
-  color : rgba(80,90,150,1);
+  background-color : rgba(210,240,255,1);
+  color : rgba(0,80,130,1);
+  padding-left : 20px;
+  padding-top : 4px;
 }
 .ArticlePageSection {
   width : 100%; height : calc( 100% - 40px );
@@ -90,7 +95,11 @@ img, span, a, input {
 /* Flex固定 */
 .FAWid100 { flex: 0 0 100px; max-width:100px; }
 .FAWid160 { flex: 0 0 160px; max-width:160px; }
+.FAWid240 { flex: 0 0 240px; max-width:240px; }
 /* Flex可変 */
 .FFWid100 { flex: 1 0 auto; min-width:100px; }
 .FFWid160 { flex: 1 0 auto; min-width:160px; }
-
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■マージン
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.MarginTop4 { margin-top:4px; }
