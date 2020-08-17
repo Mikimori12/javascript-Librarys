@@ -18,24 +18,72 @@
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="../../css/MJLibs00Common.css">
   <!-- javascript -->
+  <script type="text/javascript" src="MJLibs01LoadingAnimation.js"></script>
+  <script type="text/javascript" src="MJWorks00LibsMain.js"></script>
+  <script type="text/javascript" src="../../js/MJWorks00Main.js"></script>
 </head>
 <body>
 
   <!-- メイン -->
   <article class="ArticlePage">
     <header class="ArticlePageHeader">
-      <h1>■MJLibs01LoadingAnimation</h1>
+      <h1>■ローディングアニメーションライブラリ　MJLibs01LoadingAnimation</h1>
     </header>
     <section class="ArticlePageSection">
       <div class="MainBox">
+
+        <!-- 1 -->
         <div class="RowBox">
-          <div class="CellBox Column FAWid160">test</div>
-          <div class="CellBox Element FAWid160">element</div>
-          <div class="CellBox Element FFWid160">2</div>
+          <div class="CellBox Column FAWid240">
+            <div>回転ボール</div>
+            <div>CirclingBall</div>
+          </div>
+          <div class="CellBox Element FAWid160">
+            <div class="BTN" data-act="CirclingBallStart">再生</div>
+            <div class="BTN MarginTop4" data-act="AnimeStop">停止</div>
+          </div>
+          <div class="CellBox Element FFWid160">12個のボールがくるくる回るアニメーション。</div>
+        </div>
+        <!-- 2 -->
+        <div class="RowBox">
+          <div class="CellBox Column FAWid240">
+            <div>ダブルサークル</div>
+            <div>DoubleCircle</div>
+          </div>
+          <div class="CellBox Element FAWid160">
+            <div class="BTN" data-act="DoubleCircleStart">再生</div>
+            <div class="BTN MarginTop4" data-act="AnimeStop">停止</div>
+          </div>
+          <div class="CellBox Element FFWid160">２つのサークルがくるくる回るアニメーション。</div>
+        </div>
+        <!-- 3 -->
+        <div class="RowBox">
+          <div class="CellBox Column FAWid240">
+            <div>ダブルサークルウェーブ</div>
+            <div>DoubleCircleWave</div>
+          </div>
+          <div class="CellBox Element FAWid160">
+            <div class="BTN" data-act="DoubleCircleWaveStart">再生</div>
+            <div class="BTN MarginTop4" data-act="AnimeStop">停止</div>
+          </div>
+          <div class="CellBox Element FFWid160">２つのサークルがくるくる回るアニメーション。外側のサークルが伸縮するバージョン。</div>
+        </div>
+        <!-- 4 -->
+        <div class="RowBox">
+          <div class="CellBox Column FAWid240">
+            <div>回転ボール分散</div>
+            <div>CirclingBallsWave</div>
+          </div>
+          <div class="CellBox Element FAWid160">
+            <div class="BTN" data-act="CirclingBallsWaveStart">再生</div>
+            <div class="BTN MarginTop4" data-act="AnimeStop">停止</div>
+          </div>
+          <div class="CellBox Element FFWid160">８つのボールが合体したり分散したり。</div>
         </div>
       </div>
     </section>
   </article>
 
-</body>
+
+  </body>
 </html>
