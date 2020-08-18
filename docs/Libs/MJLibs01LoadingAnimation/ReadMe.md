@@ -55,3 +55,9 @@ XMLHttpRequestでサーバにアクセスする時などに使っています。
 | Z | int | 9999 | ローディングアニメーションのz-index値。 |
 | Name | string | "LoadingAnimationLibrary" | ローディングアニメーションのcanvas名。カスタムデータ属性「data-library」に設定される値です。 |
 
+    //設定例
+    var lda = new MJLibs01LoadingAnimation({
+      Method : "DoubleCircle",      //アニメーションパターン「DoubleCircle」を指定
+      RGB    : { R:255, G:0, B:0 }, //赤
+      Back   : "rgba(0,0,0,0)",     //背景を非表示状態に。
+    });
