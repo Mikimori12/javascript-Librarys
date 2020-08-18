@@ -89,6 +89,10 @@ h1,h2,h3,h4 { padding:0; margin:0; }
 .CellBox.Column {
   background-color : rgba(220,245,255,1);
 }
+.FlexEnd {
+  display : flex;
+  justify-content : flex-end;
+}
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■幅指定
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
