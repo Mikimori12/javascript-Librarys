@@ -19,6 +19,10 @@ div {
 }
 a, a:link, :visited {
   color : rgba(20,160,255,1);
+  text-decoration : none;
+}
+a:hover {
+  color : rgba(0,20,154,1);
   text-decoration : underline;
 }
 img, span, a, input {
