@@ -29,4 +29,13 @@ htmlファイルに外部スクリプトとして読み込みます。
 別の外部スクリプト内で、同じように「MJLibs01LoadingAnimation」メソッドをインスタンス化します。
 
     //外部javascript内
-    var lda = 
+    var lda = new MJLibs01LoadingAnimation({});
+    ：
+    //何かの処理の前にアニメーション開始
+    lda.Start();
+    ：
+    //処理の終了時にアニメーション停止
+    lda.Stop();
+    
+XMLHttpRequestでサーバにアクセスする時などに使っています。
+    
