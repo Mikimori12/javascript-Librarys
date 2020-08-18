@@ -18,8 +18,8 @@ div {
   position : relative;
 }
 a, a:link, :visited {
-  color : rgba(220,20,0,1);
-  text-decoration : none;
+  color : rgba(20,160,255,1);
+  text-decoration : underline;
 }
 img, span, a, input {
   display : inline-block;
