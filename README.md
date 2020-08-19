@@ -15,4 +15,4 @@ HTMLタグの「title属性」でもいいんですが、もっといろいろ�
 <a href="https://mikimori12.github.io/javascript-Librarys/Libs/MJLibs02MouseoverDocument/index.html" title="">マウスオーバードキュメントのサンプル</a>
 
 ## おまけ
-<a href="https://mikimori12.github.io/javascript-Librarys/Libs/MJWorks01Shooting/jm.work.html">Shooting Incident</a>
+<a href="https://mikimori12.github.io/javascript-Librarys/Libs/MJWorks00Shooting/jm.work.html">Shooting Incident</a>
