@@ -1,0 +1,17 @@
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+  ■ライブラリ：マウスオーバードキュメント
+++++++++++++++++++++++++++++++++++++++++++++++++++*/
+[data-helpid] {
+  width : 24px;
+  border :solid 1px rgba(65,65,65,1);
+  border-radius : 2px 2px 2px 2px;
+  text-align : center;
+}
+[data-helpid]:hover {
+  cursor : help;
+}
+[data-helpdoc] {
+  padding : 8px 20px;
+  background-color : white;
+  box-shadow : 0 0 2px 1px rgba(0,0,0,0.5);
+}
