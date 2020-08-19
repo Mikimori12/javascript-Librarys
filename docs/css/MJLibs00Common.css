@@ -101,6 +101,15 @@ h1,h2,h3,h4 { padding:0; margin:0; }
   display : flex;
   justify-content : center;
 }
+table {
+  border-collapse : collapse;
+}
+th {
+  background-color : rgba(120,240,255,1);
+}
+td {
+  border : solid 1px rgba(180,180,180,1);
+}
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■幅指定
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
