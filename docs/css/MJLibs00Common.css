@@ -124,9 +124,10 @@ td {
 .FFWid100 { flex: 1 0 auto; min-width:100px; }
 .FFWid160 { flex: 1 0 auto; min-width:160px; }
 /* 通常 */
-.Wid80 { width : 80px; max-width : 80px; min-width : 80px; }
-.Wid100 { width : 100px; max-width : 100px; min-width : 100px; }
-.Wid200 { width : 200px; max-width : 200px; min-width : 200px; }
+.Wid60 { width : 60px !important; max-width : 60px !important; min-width : 60px !important; }
+.Wid80 { width : 80px !important; max-width : 80px !important; min-width : 80px !important; }
+.Wid100 { width : 100px !important; max-width : 100px !important; min-width : 100px !important; }
+.Wid200 { width : 200px !important; max-width : 200px !important; min-width : 200px !important; }
 /*++++++++++++++++++++++++++++++++++++++++++++++++
   ■マージン
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
