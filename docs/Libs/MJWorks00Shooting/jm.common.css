@@ -1,0 +1,19 @@
+/*******************************************************************
+  ■研修用css
+*******************************************************************/
+body {
+background-color : #f0f0f0;
+color : #d0d0d0;
+}
+div {
+padding : 10px;
+}
+canvas {
+background-color : #ffffff;
+user-select: none;
+}
+div.jmBOX {
+border : solid 1px #e0e0e0;
+}
+
+
