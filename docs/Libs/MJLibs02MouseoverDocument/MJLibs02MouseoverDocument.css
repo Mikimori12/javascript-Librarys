@@ -9,6 +9,7 @@
 }
 [data-helpid]:hover {
   cursor : help;
+  background-color : rgba(220,245,255,1);
 }
 [data-helpdoc] {
   padding : 8px 20px;
