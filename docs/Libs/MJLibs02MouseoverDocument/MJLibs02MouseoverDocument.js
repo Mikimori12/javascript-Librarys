@@ -4,7 +4,7 @@
 var MJLibs02MouseoverDocument = (function() {
 
   //■【メンバ変数】
-  var _HelpDoc, _HelpDocZIndex, _HelpDocXY;
+  var _HelpDoc, _HelpDocZIndex, _HelpDocXY, _HelpFLG;
 
   //■【コンストラクタ】
   var MJLibs02MouseoverDocument = function(param) {
@@ -12,6 +12,7 @@ var MJLibs02MouseoverDocument = (function() {
     _HelpDoc = this;
     _HelpDocXY = {};//ヘルプドキュメントを表示する座標
     _HelpDocZIndex = param.ZIndex || 9990;//ヘルプドキュメントのz-index値
+    _HelpFLG = false;
     //▼起動
     _HelpDoc.RunHelpdocumentLibrary();
   };
@@ -49,17 +50,23 @@ var MJLibs02MouseoverDocument = (function() {
 
   //▼ヘルプドキュメント表示
   PT.ShowHelpDocument = function(param) {
-    var helpid = _HelpDoc.GetHelpID(param.target);
-    var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
-    doc.style.top = _HelpDocXY[helpid].Top;
-    doc.style.left = _HelpDocXY[helpid].Left;
-    doc.style.display = 'block';
+    if(!_HelpFLG) {
+      _HelpFLG = true;
+      var helpid = _HelpDoc.GetHelpID(param.target);
+      var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
+      doc.style.top = _HelpDocXY[helpid].Top;
+      doc.style.left = _HelpDocXY[helpid].Left;
+      doc.style.display = 'block';
+    }
   };
   //▼ヘルプドキュメント閉じる
   PT.CloseHelpDocument = function(param) {
-    var helpid = _HelpDoc.GetHelpID(param.target);
-    var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
-    doc.style.display = 'none';
+    if(_HelpFLG) {
+      _HelpFLG = false;
+      var helpid = _HelpDoc.GetHelpID(param.target);
+      var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
+      doc.style.display = 'none';
+    }
   };
 
   //▼helpidを取得する（再起処理あり）
