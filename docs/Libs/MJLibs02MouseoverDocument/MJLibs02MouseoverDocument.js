@@ -12,7 +12,7 @@ var MJLibs02MouseoverDocument = (function() {
     _HelpDoc = this;
     _HelpDocXY = {};//ヘルプドキュメントを表示する座標
     _HelpDocZIndex = param.ZIndex || 9990;//ヘルプドキュメントのz-index値
-    _HelpFLG = false;
+    _HelpFLG = true;
     //▼起動
     _HelpDoc.RunHelpdocumentLibrary();
   };
@@ -44,28 +44,32 @@ var MJLibs02MouseoverDocument = (function() {
       //マウスオーバーイベント実装
       nHELP.addEventListener('mouseover', _HelpDoc.ShowHelpDocument, false);
       nHELP.addEventListener('mouseout', _HelpDoc.CloseHelpDocument, false);
-      nHELP.addEventListener('touchend', _HelpDoc.CloseHelpDocument, false);
+      nHELP.addEventListener('click', _HelpDoc.ClickHelpDocument, false);
     }
   };
 
   //▼ヘルプドキュメント表示
   PT.ShowHelpDocument = function(param) {
-    if(!_HelpFLG) {
-      _HelpFLG = true;
+      _HelpFLG = false;
       var helpid = _HelpDoc.GetHelpID(param.target);
       var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
       doc.style.top = _HelpDocXY[helpid].Top;
       doc.style.left = _HelpDocXY[helpid].Left;
       doc.style.display = 'block';
-    }
   };
   //▼ヘルプドキュメント閉じる
   PT.CloseHelpDocument = function(param) {
-    if(_HelpFLG) {
-      _HelpFLG = false;
+      _HelpFLG = true;
       var helpid = _HelpDoc.GetHelpID(param.target);
       var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
       doc.style.display = 'none';
+  };
+  //▼クリックで表示非表示
+  PT.ClickHelpDocument = function(param) {
+    if(_HelpFLG) {
+      _HelpDoc.ShowHelpDocument(param);
+    } else {
+      _HelpDoc.CloseHelpDocument(param);
     }
   };
 
