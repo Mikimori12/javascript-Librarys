@@ -44,6 +44,7 @@ var MJLibs02MouseoverDocument = (function() {
       //マウスオーバーイベント実装
       nHELP.addEventListener('mouseover', _HelpDoc.ShowHelpDocument, false);
       nHELP.addEventListener('mouseout', _HelpDoc.CloseHelpDocument, false);
+      nHELP.addEventListener('touchstart', _HelpDoc.TouchHelpDocument, false);
       nHELP.addEventListener('touchend', _HelpDoc.CloseHelpDocument, false);
     }
   };
@@ -67,6 +68,10 @@ var MJLibs02MouseoverDocument = (function() {
       var doc = document.querySelector('[data-helpdoc="'+helpid+'"]');
       doc.style.display = 'none';
     }
+  };
+  //▼タッチイベント（選択不可）
+  PT.TouchHelpDocument = function(param) {
+    param.preventDefault();
   };
 
   //▼helpidを取得する（再起処理あり）
