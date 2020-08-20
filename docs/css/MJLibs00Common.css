@@ -78,6 +78,7 @@ h1,h2,h3,h4 { padding:0; margin:0; }
 .RowBox {
   width : 90%;
   display : flex;
+  background-color : rgba(240,240,240,1);
 }
 .MainBox .RowBox .CellBox {
   border-bottom : solid 1px rgba(140,140,140,1);
@@ -124,6 +125,7 @@ td {
 /* Flex可変 */
 .FFWid100 { flex: 1 0 auto; min-width:100px; }
 .FFWid160 { flex: 1 0 auto; min-width:160px; }
+.FFWid320 { flex: 1 0 auto; min-width:320px; }
 /* 通常 */
 .Wid60 { width : 60px !important; max-width : 60px !important; min-width : 60px !important; }
 .Wid80 { width : 80px !important; max-width : 80px !important; min-width : 80px !important; }
