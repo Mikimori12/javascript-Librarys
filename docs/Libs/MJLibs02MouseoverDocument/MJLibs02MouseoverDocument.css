@@ -6,6 +6,7 @@
   border :solid 1px rgba(65,65,65,1);
   border-radius : 2px 2px 2px 2px;
   text-align : center;
+  
 }
 [data-helpid]:hover {
   cursor : help;
