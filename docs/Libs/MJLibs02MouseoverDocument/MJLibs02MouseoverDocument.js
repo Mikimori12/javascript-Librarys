@@ -43,6 +43,7 @@ var MJLibs02MouseoverDocument = (function() {
       //マウスオーバーイベント実装
       nHELP.addEventListener('mouseover', _HelpDoc.ShowHelpDocument, false);
       nHELP.addEventListener('mouseout', _HelpDoc.CloseHelpDocument, false);
+      nHELP.addEventListener('touchend', _HelpDoc.CloseHelpDocument, false);
     }
   };
 
