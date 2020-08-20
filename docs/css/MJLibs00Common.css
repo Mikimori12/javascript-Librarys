@@ -120,6 +120,7 @@ td {
 .FAWid100 { flex: 0 0 100px; max-width:100px; }
 .FAWid160 { flex: 0 0 160px; max-width:160px; }
 .FAWid240 { flex: 0 0 240px; max-width:240px; }
+.FAWid320 { flex: 0 0 320px; max-width:320px; }
 /* Flex可変 */
 .FFWid100 { flex: 1 0 auto; min-width:100px; }
 .FFWid160 { flex: 1 0 auto; min-width:160px; }
