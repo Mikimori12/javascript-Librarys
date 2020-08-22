@@ -29,7 +29,7 @@ var JMWorksLibAudio = (function() {
   PT.LoadingAudioSource = function() {
     _AudioSource = _AudioContext.createBufferSource();
     var request = new XMLHttpRequest();
-    request.open('GET','images/test.mp4', true);
+    request.open('GET','images/test.mp3', true);
     request.responseType = 'arraybuffer';
     request.onload = function() {
       var audioData = request.response;
