@@ -32,6 +32,7 @@ var JMWorksLibAudio = (function() {
     request.open('GET','images/test.mp3', true);
     request.responseType = 'arraybuffer';
     request.onload = function() {
+      console.log('onload ya')
       var audioData = request.response;
       
       _AudioContext.decodeAudioData(audioData, function(buffer) {
